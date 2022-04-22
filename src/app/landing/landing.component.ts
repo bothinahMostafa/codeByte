@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class LandingComponent implements OnInit, AfterContentChecked { 
 
   products: any[] = [];
-  
+  added: boolean = false;
 
   constructor(private http: HttpClient) {
   }
@@ -27,11 +27,14 @@ export class LandingComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked(): void {
-    console.log([...document.getElementsByClassName('cards__item')]);
-    [...document.getElementsByClassName('cards__item')]?.forEach((el: Element)=> {
-      el.addEventListener('click', ()=> {
-        el.getElementsByClassName('cards__backoptions')[0]?.classList.toggle('v-none');
-      });
-    });  
+    if(document.getElementsByClassName('cards__item').length > 0 && !this.added){
+      [...document.getElementsByClassName('cards__item')].forEach((el: Element)=> {
+        el.addEventListener('click', ()=> {
+          console.log('clicked');
+          el.getElementsByClassName('cards__backoptions')[0]?.classList.toggle('v-none');
+        });
+      }); 
+      this.added = true;
+    }     
   }
 }
