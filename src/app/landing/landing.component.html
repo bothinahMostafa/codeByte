@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="cards">
+    <div *ngFor="let product of products" class="cards__item">
+      <img src="{{product.image}}" alt="image" class="cards__img">
+      <div class="catds__info mt-10">{{product.title}}</div>
+      <!-- <div class="catds__subInfo">50*70mm f2.8G</div> -->
+      <button class="btn btn-primary cards__btn">£ {{product.price}}</button>
+      <a href="javascript()::void" class="cards__vat">incl. VAT</a>
+
+      <div class="cards__backoptions v-none">
+        <div class="cards__option">
+          <img class="option__img" src="../../assets/svgs/pen-to-square-regular.svg" alt="">
+          <span>Edit</span>
+        </div>
+        <div class="cards__option">
+          <img class="option__img" src="../../assets/svgs/calendar-days-solid.svg" alt="">
+          <span>Availability</span>
+        </div>
+        <div class="cards__option">
+          <img class="option__img" src="../../assets/svgs/lock-solid.svg" alt="">
+          <span>Make private</span>
+        </div>
+        <div class="cards__option--delete">
+          <img class="option__img" src="../../assets/svgs/trash-can-regular.svg" alt="">
+          <span>Delete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
