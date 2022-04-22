@@ -30,7 +30,6 @@ export class LandingComponent implements OnInit, AfterContentChecked {
     if(document.getElementsByClassName('cards__item').length > 0 && !this.added){
       [...document.getElementsByClassName('cards__item')].forEach((el: Element)=> {
         el.addEventListener('click', ()=> {
-          console.log('clicked');
           el.getElementsByClassName('cards__backoptions')[0]?.classList.toggle('v-none');
         });
       }); 
